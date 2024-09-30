@@ -7,7 +7,8 @@ namespace PartyInvites.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        //Views do controlador HomeController estão na pasta home
+        //podemos criar as ações através de funções que façam return do que se quer ver
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -16,6 +17,12 @@ namespace PartyInvites.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        //qualquer ação tem de ser pública senão não dá para chamar
+        //string pode ser em minusculas
+        public  string Contact()
+        {
+            return "Contact information is not currently available";
         }
 
         public IActionResult Privacy()

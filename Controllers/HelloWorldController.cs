@@ -13,9 +13,9 @@ namespace PartyInvites.Controllers
 
         //
         //GET: /HelloWorld/Welcome
-        public string Welcome()
+        public ViewResult Welcome()
         {
-            return "Welcome to the universe!";
+            return View();
         }
     }
 }

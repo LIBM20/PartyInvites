@@ -30,7 +30,12 @@ namespace PartyInvites.Controllers
         {
             return View();
         }
-        
+        //fica sempre antes do objeto que está a ser anotado
+        [HttpPost]
+        public IActionResult Register(GuestResponse response)
+        {
+            return View("RegisterComplete");
+        }
         public IActionResult Privacy()
         {
             return View();

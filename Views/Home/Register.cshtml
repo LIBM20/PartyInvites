@@ -1,4 +1,5 @@
-﻿
+﻿@model GuestResponse
+<!-- o model é posto para se poder usar o asp-for-->
 @{
     ViewData["Title"] = "Register";
 }
@@ -6,3 +7,23 @@
 <h1>@ViewBag.Title</h1>
 <h2>Are you comming to the party? \_('_')_/</h2>
 
+<form asp-action = "Register">
+    <div class="mb-3">
+      <label asp-for="Name" class="form-label">Name:</label>
+      <input asp-for="Name" class="form-control" placeholder="Enter your name"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Phone:</label>
+        <input asp-for="Phone" class="form-control" placeholder="Enter your phone number" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email:</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" asp-for="WillAttend" class="form-check-input"/>
+        <label asp-for="WillAttend" class="form-label">I'm going to attend the party</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

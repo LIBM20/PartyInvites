@@ -7,10 +7,31 @@
 <h1>RegisterComplete</h1>
 
 <div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div class="card-header">
         <h5 class="card-title text-info">Register Complete</h5>
         <h6 class="card-subtitle mb-2 text-muted text-success">Thank you for registering</h6>
+    </div>
+    <div class="card-body">
+        <div class = "mb-3">
+            <label asp-for="Name">Name:</label>
+            <span class="fw-bold">@Model.Name</span>
+        </div>
+        <div class = "mb-3">
+            <label asp-for="Phone">Phone:</label>
+            <span class="fw-bold">@Model.Phone</span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email">Email:</label>
+            <span class="fw-bold">@Model.Email</span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="WillAttend">Will Attend:</label>
+            <span class="fw-bold">@(Model.WillAttend ? "Yes" : "No")</span>
+        </div>
         <a asp-action="Index" class="card-link text-info">OK</a>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="card-link">Ok</a>
     </div>
 </div>
 

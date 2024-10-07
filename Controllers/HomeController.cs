@@ -25,6 +25,10 @@ namespace PartyInvites.Controllers
             return "Contact information is not currently available";
         }
 
+        public IActionResult Register()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

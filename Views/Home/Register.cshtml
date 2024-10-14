@@ -22,11 +22,31 @@
     </div>
     <div class="mb-3">
         <label asp-for="WillAttend" class="form-label">Will you attend?</label>
-        <select asp-for="WillAttend" class="form-select">
+        <div class="form-check">
+            <input asp-for="WillAttend" value="" class="form-check-input" type="radio">
+            <label class="form-check-label">
+                Maybe
+            </label>
+        </div>
+        <div class="form-check">
+            <input asp-for="WillAttend" value="true" class="form-check-input" type="radio">
+            <label class="form-check-label">
+                Yes
+            </label>
+        </div>
+        <div class="form-check">
+            <input asp-for="WillAttend" value="false" class="form-check-input" type="radio">
+            <label class="form-check-label">
+                No
+            </label>
+        </div>
+        <!-- 
+            <select asp-for="WillAttend" class="form-select">
             <option value = "False">No</option>
             <option value="True">Yes</option>
             <option value="">Maybe</option>
-          </select>
+          </select> 
+        -->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

@@ -46,6 +46,22 @@ namespace PartyInvites.Controllers
             }
             
         }
+        public IActionResult PeopleAttending()
+        {
+            /* List<GuestResponse> peopleAttending = new List<GuestResponse>();
+             foreach(var response in Repository.Responses)
+             {
+                 if(response.WillAttend == true)
+                 {
+                     peopleAttending.Add(response);
+                 }
+             }*/
+            //var peopleAttending = Repository.Responses.Where(r=>r.WillAttend == true);//apenas as pessoas que vão
+            var peopleAttending = from r in Repository.Responses 
+                                  where r.WillAttend == true
+                                  select r;
+            return View("ListResponses", peopleAttending);
+        }
         public IActionResult Privacy()
         {
             return View();

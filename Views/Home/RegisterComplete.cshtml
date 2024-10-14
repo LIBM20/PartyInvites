@@ -26,23 +26,9 @@
         </div>
         <div class="mb-3">
             <label asp-for="WillAttend" class="form-label">Will you attend: </label>
-            <div class="lead">
-                @switch (Model.WillAttend)
-                    {
-                        case null:
-                            @:Maybe
-                            break;
-                        case true:
-                            @:Yes
-                            break;
-                        case false:
-                            @:No
-                            break;
-                    }
-            </div>
+            <div class="fw-bold">@Model.IsAttending</div>
             @*<div class="fw-bold">@(Model.WillAttend ? "Yes" : "No")</div>*@
         </div>
-        <a asp-action="Index" class="card-link text-info">OK</a>
     </div>
     <div class="card-footer">
         <a asp-action="Index" class="card-link">Ok</a>

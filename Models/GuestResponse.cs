@@ -1,4 +1,6 @@
-﻿namespace PartyInvites.Models
+﻿using System.Reflection;
+
+namespace PartyInvites.Models
 {
     public class GuestResponse
     {
@@ -20,7 +22,21 @@
         //pode ser usado um ponto de interrogação a seguir ao bool para caso possa ser Null
         public bool? WillAttend { get; set; }
 
+        public string IsAttending {
+            get { 
+                switch(WillAttend)
+                {
+                    case null:
+                        return "Maybe";
+                    case true:
+                        return "Yes";
+                    case false:
+                        return "No";
+                }
+            }
+        }
 
-        
+
+
     }
 }

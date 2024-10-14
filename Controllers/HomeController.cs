@@ -35,6 +35,7 @@ namespace PartyInvites.Controllers
             Repository.AddResponse(response);
             return View("RegisterComplete", response);
         }
+        public IActionResult ListResponses() => View(Repository.Responses);
         public IActionResult Privacy()
         {
             return View();

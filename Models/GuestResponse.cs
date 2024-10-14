@@ -18,7 +18,7 @@
         public string Phone {  get; set; }
         public string Email { get; set; }
         //pode ser usado um ponto de interrogação a seguir ao bool para caso possa ser Null
-        public bool WillAttend { get; set; }
+        public bool? WillAttend { get; set; }
 
 
         

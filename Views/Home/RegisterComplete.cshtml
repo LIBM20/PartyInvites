@@ -6,7 +6,7 @@
 
 <h1>RegisterComplete</h1>
 
-<div class="card" style="width: 18rem;">
+<div class="card">
     <div class="card-header">
         <h5 class="card-title text-info">Register Complete</h5>
         <h6 class="card-subtitle mb-2 text-muted text-success">Thank you for registering</h6>
@@ -25,8 +25,22 @@
             <span class="fw-bold">@Model.Email</span>
         </div>
         <div class="mb-3">
-            <label asp-for="WillAttend">Will Attend:</label>
-            <span class="fw-bold">@(Model.WillAttend ? "Yes" : "No")</span>
+            <label asp-for="WillAttend" class="form-label">Will you attend: </label>
+            <div class="lead">
+                @switch (Model.WillAttend)
+                    {
+                        case null:
+                            @:Maybe
+                            break;
+                        case true:
+                            @:Yes
+                            break;
+                        case false:
+                            @:No
+                            break;
+                    }
+            </div>
+            @*<div class="fw-bold">@(Model.WillAttend ? "Yes" : "No")</div>*@
         </div>
         <a asp-action="Index" class="card-link text-info">OK</a>
     </div>

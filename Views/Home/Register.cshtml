@@ -21,8 +21,12 @@
         <input asp-for="Email" class="form-control" placeholder="Enter your email" />
     </div>
     <div class="mb-3">
-        <input type="checkbox" asp-for="WillAttend" class="form-check-input"/>
-        <label asp-for="WillAttend" class="form-label">I'm going to attend the party</label>
+        <label asp-for="WillAttend" class="form-label">Will you attend?</label>
+        <select asp-for="WillAttend" class="form-select">
+            <option value = "False">No</option>
+            <option value="True">Yes</option>
+            <option value="">Maybe</option>
+          </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

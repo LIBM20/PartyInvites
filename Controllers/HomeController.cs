@@ -32,6 +32,7 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public IActionResult Register(GuestResponse response)
         {
+            Repository.AddResponse(response);
             return View("RegisterComplete", response);
         }
         public IActionResult Privacy()

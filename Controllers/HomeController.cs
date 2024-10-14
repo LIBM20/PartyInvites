@@ -26,10 +26,8 @@ namespace PartyInvites.Controllers
         }
 
         //GET: /Home/Register
-        public IActionResult Register()
-        {
-            return View();
-        }
+        public IActionResult Register() => View(); //abreviação :)
+        
         //fica sempre antes do objeto que está a ser anotado
         [HttpPost]
         public IActionResult Register(GuestResponse response)

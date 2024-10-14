@@ -5,31 +5,31 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Will Attend</th>
-        </tr>
-    </thead>
-    <tbody>
-           @* @foreach (GuestResponse r in Model) 
-            {
-                var response = Model[i];
-            }*@
-            @foreach (var r in Model) //var insere o tipo automáticamente, forma mais rápida de fazer o qeu está em cima :)
-            {
-                <tr>
-                    <td>@r.Name</td>
-                    <td>@r.Phone</td>
-                    <td>@r.Email</td>
-                    <td>@r.IsAttending</td>
-                </tr>
-            }
-    </tbody>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Will Attend</th>
+            </tr>
+        </thead>
+        <tbody>
+               @* @foreach (GuestResponse r in Model) 
+                {
+                    var response = Model[i];
+                }*@
+                @foreach (var r in Model) //var insere o tipo automáticamente, forma mais rápida de fazer o qeu está em cima :)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.Phone</td>
+                        <td>@r.Email</td>
+                        <td>@r.IsAttending</td>
+                    </tr>
+                }
+        </tbody>
 
-</table>
+    </table>
 <a asp-action="Index" class="btn btn-secondary">Back</a>
 

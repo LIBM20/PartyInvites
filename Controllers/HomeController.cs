@@ -35,7 +35,17 @@ namespace PartyInvites.Controllers
             Repository.AddResponse(response);
             return View("RegisterComplete", response);
         }
-        public IActionResult ListResponses() => View(Repository.Responses);
+        public IActionResult ListResponses(){
+            if(Repository.Responses.Count() > 0)
+            {
+                return View(Repository.Responses);
+            }
+            else
+            {
+                return View("NoRegistrations");
+            }
+            
+        }
         public IActionResult Privacy()
         {
             return View();

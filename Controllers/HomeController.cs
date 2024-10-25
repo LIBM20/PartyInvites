@@ -32,8 +32,15 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public IActionResult Register(GuestResponse response)
         {
+            //caso os dados sejam válidos
+            if (!ModelState.IsValid)
+            {
+                return View(response);
+            }
             Repository.AddResponse(response);
             return View("RegisterComplete", response);
+
+
         }
         public IActionResult ListResponses(){
             if(Repository.Responses.Count() > 0)

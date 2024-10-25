@@ -8,17 +8,22 @@
 <h2>Are you comming to the party? \_('_')_/</h2>
 
 <form asp-action = "Register">
+    @*ModelOnly -> só mostra os erros que não tenham aver com um campo expecifico*@
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="mb-3">
       <label asp-for="Name" class="form-label">Name:</label>
       <input asp-for="Name" class="form-control" placeholder="Enter your name"/>
+      <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Phone" class="form-label">Phone:</label>
         <input asp-for="Phone" class="form-control" placeholder="Enter your phone number" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Email" class="form-label">Email:</label>
         <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="WillAttend" class="form-label">Will you attend?</label>
@@ -48,6 +53,7 @@
           </select> 
         -->
     </div>
+    <span asp-validation-for="Name" class="text-danger"></span>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
